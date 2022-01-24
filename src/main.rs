@@ -14,5 +14,6 @@ fn main() {
         stdout().flush().unwrap();
         b1.read_line(&mut line).unwrap();
         println!("So you entered {}", line);
+        line = String::new();
     }
 }
