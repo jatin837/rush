@@ -3,6 +3,13 @@ use std::io::{
     stdout
 };
 use std::env;
+use nix::sys::wait::wait;
+use nix::unistd::ForkResult::{Child, Parent};
+use nix::unistd::{
+    fork,
+    getpid,
+    getppid
+};
 
 fn main() {
     let mut line = String::new();
